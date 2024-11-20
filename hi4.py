@@ -51,4 +51,4 @@ data['Business Type'] = business_types
 output_file_path = 'A_GROUP_with_business_type.csv'
 data.to_csv(output_file_path, index=False)
 
-output_file_path
+
