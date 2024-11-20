@@ -26,7 +26,7 @@ def get_business_type(url):
         return None
 
 # Load the CSV file containing the business links
-file_path = 'T_GROUP.csv'
+file_path = 'A_GROUP.csv'
 data = pd.read_csv(file_path)
 
 # Initialize a list to store business types
@@ -46,7 +46,7 @@ for index, row in data.iterrows():
 data['Business Type'] = business_types
 
 # Save the updated dataframe to a new CSV file
-output_file_path = 'T_GROUP_with_business_type.csv'
+output_file_path = 'A_GROUP_with_business_type.csv'
 data.to_csv(output_file_path, index=False)
 
 output_file_path
