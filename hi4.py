@@ -10,8 +10,10 @@ def get_business_type(url):
         # Parse the HTML content of the page
         soup = BeautifulSoup(response.content, 'html.parser')
         
-        # Find the business type using the given selector
-        business_type_element = soup.find('a', {'data-index-link': 'true'})
+        # Find the business type element using the provided CSS selector
+        business_type_element = soup.select_one(
+            "#contact-details > div.contact-details > div.media-object.clearfix.inside-gap-medium.image-on-right > div > h2 > a"
+        )
         
         # Return the business type if found, otherwise return None
         if business_type_element:
