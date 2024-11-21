@@ -45,6 +45,9 @@ except FileNotFoundError:
     print(f"File not found: {file_path}")
     exit()
 
+# Limit the data to the first 60,000 rows
+data = data.head(60000)
+
 # Initialize a list to store business types
 business_types = []
 
