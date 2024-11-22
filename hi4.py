@@ -45,8 +45,8 @@ except FileNotFoundError:
     print(f"File not found: {file_path}")
     exit()
 
-# Limit the data to the first 60,000 rows
-data = data.head(60000)
+# Select rows starting from 60,000 to the end
+data = data.iloc[60000:]
 
 # Initialize a list to store business types
 business_types = []
@@ -68,7 +68,7 @@ for index, row in data.iterrows():
 data['Business Type'] = business_types
 
 # Save the updated dataframe to a new CSV file
-output_file_path = 'A_GROUP_with_business_type.csv'
+output_file_path = 'A_GROUP_with_business_type_60000_and_beyond.csv'
 data.to_csv(output_file_path, index=False)
 
 print(f"Updated data saved to {output_file_path}")
